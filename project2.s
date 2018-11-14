@@ -61,3 +61,8 @@
         li $t1, 0              #Initialize count at 0
         add $a0, $t5, $zero
          
+	length_loop:
+	lb $t8, 0($a0)                 #load the next char to t8
+	or $t7, $t8, $t1   
+	beq $t7, $zero, emptyError     #end the loop if equal to zero
+	beq $t8, $zero, complete       #end loop if end-of-line is reached
