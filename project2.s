@@ -32,4 +32,8 @@
 	rts_loop:
 	add $t4, $t8, $t9
 	addi $t4, $t4, -100
-	beqz $t4, end_rts   # End if the end of the string buffer has been reached
+	beqz $t4, end_rts        # End if the end of the string buffer has been reached
+	add $t4, $t9, $a0        # Get address of current index 
+	lb $t4, 0($t4)           # Load char from current index into t4
+	beq $t4, $zero, end_rts  # Exit loop to check_Length if string terminates
+	addi $t4, $t4, -10
