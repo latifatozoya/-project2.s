@@ -82,3 +82,10 @@
 	la $a0, is_empty
 	syscall
         j exit
+	
+	#Return error message "input is too long"
+        length_error:
+	li $v0, 4
+        la $a0, too_large
+        syscall
+	j exit
