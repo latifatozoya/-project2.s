@@ -179,3 +179,8 @@
 	addi $a0, $a0, 1     #increments the pointer
 	j String_Conversion
 	
+	squared:
+	li $s3, 1156    #34 to the power of two
+	mult $s2, $s3
+	mflo $s4
+	add $t9, $t9, $s4
