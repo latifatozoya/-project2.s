@@ -69,3 +69,9 @@
 	addi $a0, $a0, 1               #increments the string pointer 
 	addi $t1, $t1, 1               #increments the count
 	j length_loop
+
+	#Execute if end of string has been reached
+	complete:
+	slti $t2, $t1, 5
+	beq $t2, $zero, length_error   #branch to length error if t2 equal to 0
+	bne $t2, $zero, checkString
