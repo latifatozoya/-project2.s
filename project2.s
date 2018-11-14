@@ -42,3 +42,10 @@
 	bnez $t4, update_last_character_index   #branch to update last character if the character isnt a space
 	
 	rts_loop_increment:
+	addi $t9, $t9, 1     #Increment current index 
+	j rts_loop
+	
+	update_last_character_index:
+	move $t7, $t9        #save the current index into the last index 
+	j rts_loop_increment
+	
