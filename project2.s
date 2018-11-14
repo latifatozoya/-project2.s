@@ -37,3 +37,8 @@
 	lb $t4, 0($t4)           # Load char from current index into t4
 	beq $t4, $zero, end_rts  # Exit loop to check_Length if string terminates
 	addi $t4, $t4, -10
+	beqz $t4, end_rts        # end loop if endline character reached
+	addi $t4, $t4, -22
+	bnez $t4, update_last_character_index   #branch to update last character if the character isnt a space
+	
+	rts_loop_increment:
