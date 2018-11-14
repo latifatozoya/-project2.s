@@ -66,3 +66,6 @@
 	or $t7, $t8, $t1   
 	beq $t7, $zero, emptyError     #end the loop if equal to zero
 	beq $t8, $zero, complete       #end loop if end-of-line is reached
+	addi $a0, $a0, 1               #increments the string pointer 
+	addi $t1, $t1, 1               #increments the count
+	j length_loop
