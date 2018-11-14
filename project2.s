@@ -97,3 +97,8 @@
         checkStringLoop:
         li $v0, 11
         lb $t3, 0($a0)
+	move $t9, $a0
+        move $a0, $t3
+        move $a0, $t9
+        li $t9, 10       # newline character
+	
