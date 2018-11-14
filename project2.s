@@ -202,3 +202,9 @@
 	mult $s2, $s3
 	mflo $s4
 	add $t9, $t9, $s4    #adds the intermediate result
+
+	#displays the result
+        display_the_Sum: 
+        li $v0, 1
+        move $a0, $t9
+        syscall
