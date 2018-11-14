@@ -75,3 +75,10 @@
 	slti $t2, $t1, 5
 	beq $t2, $zero, length_error   #branch to length error if t2 equal to 0
 	bne $t2, $zero, checkString
+
+	#Return error message "input is empty"
+	emptyError:
+	li $v0, 4
+	la $a0, is_empty
+	syscall
+        j exit
