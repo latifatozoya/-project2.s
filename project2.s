@@ -122,3 +122,9 @@
 	addi $a0, $a0, 1
 	j checkStringLoop
 	
+	#Return error message indicating invalid base-34 number
+	invalid_Base:
+	li $v0, 4
+	la $a0, is_invalid
+	syscall
+	j exit 
