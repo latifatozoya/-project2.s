@@ -110,3 +110,8 @@
         bne $t4, $zero, invalid_Base  
         slti $t4, $t3, 89               # if char is less than 89 [Y] (valid input)
         bne $t4, $zero, Increment
+	slti $t4, $t3, 97               # if char is less than 97 [a] (invalid input)
+        bne $t4, $zero, invalid_Base 
+        slti $t4, $t3, 121              # if char is less than 121 [y] (valid input)
+        bne $t4, $zero, Increment
+        bgt $t3, 120, invalid_Base      # if char is greater than 120 [x] (invalid input)
