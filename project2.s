@@ -169,3 +169,8 @@
 	beq $s0, $s6, squared
 	beq $s0, $s5, to_the_one_power
 	beq $s0, $s1, to_the_zero_power	
+
+	cubed:
+	li $s3, 39304    #34 to the power of three
+	mult $s2, $s3
+	mflo $s4
