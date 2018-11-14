@@ -89,3 +89,11 @@
         la $a0, too_large
         syscall
 	j exit
+
+	#Checks for characters exceeding base-34 representation
+        checkString:
+        move $a0, $t5 # Move the user input address from t5 to a0
+        
+        checkStringLoop:
+        li $v0, 11
+        lb $t3, 0($a0)
