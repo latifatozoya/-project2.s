@@ -141,3 +141,9 @@
         li $s5, 1
         li $s1, 0
 	
+	#Converts valid character to a number
+	String_Conversion:     
+        lb $s2, 0($a0)
+        beqz $s2, display_the_Sum		#End loop if null character is reached
+	beq $s2, $t8, display_the_Sum    	#End loop if end-of-line is detected
+	slti $t4, $s2, 58                       #Check if the char is less than 58 (0-9)
