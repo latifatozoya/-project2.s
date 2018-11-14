@@ -164,3 +164,8 @@
 	a_to_x:
 	addi $s2, $s2, -87
 	
+	calculations:
+	beq $s0, $s7, cubed
+	beq $s0, $s6, squared
+	beq $s0, $s5, to_the_one_power
+	beq $s0, $s1, to_the_zero_power	
