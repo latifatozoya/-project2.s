@@ -128,3 +128,10 @@
 	la $a0, is_invalid
 	syscall
 	j exit 
+
+	#conversions are initialized 
+	Initialization:   
+	move $a0, $t5
+        li $t8, 10
+        li $t9, 0           #Initialize decimal sum to zero
+        add $s0, $s0, $t1
