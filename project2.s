@@ -193,3 +193,7 @@
 	mult $s2, $s3
 	mflo $s4
 	add $t9, $t9, $s4
+	addi $s0, $s0, -1     #reduce the counter by 1
+	addi $a0, $a0, 1      #increments the pointer
+	j String_Conversion
+        
