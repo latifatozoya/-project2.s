@@ -55,3 +55,9 @@
 	addi $t4, $t4, 1     # Get address of character after last non-space characnter
 	sb $zero, 0($t4)     # Null Terminate string after last non-space character
 	j check_Length
+
+	#Check length of string, this obtains the length of the string
+        check_Length:
+        li $t1, 0              #Initialize count at 0
+        add $a0, $t5, $zero
+         
