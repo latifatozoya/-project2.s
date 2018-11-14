@@ -156,3 +156,11 @@
 	zero_to_nine:
 	addi $s2, $s2, -48
 	j calculations
+	
+	A_to_X:
+	addi $s2, $s2, -55
+	j calculations
+	
+	a_to_x:
+	addi $s2, $s2, -87
+	
