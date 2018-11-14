@@ -49,3 +49,9 @@
 	move $t7, $t9        #save the current index into the last index 
 	j rts_loop_increment
 	
+	end_rts:
+	add $t4, $zero, $a0  # Get address of begining of user input
+	add $t4, $t4, $t7    # Get address of the last non-space character
+	addi $t4, $t4, 1     # Get address of character after last non-space characnter
+	sb $zero, 0($t4)     # Null Terminate string after last non-space character
+	j check_Length
