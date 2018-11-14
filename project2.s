@@ -15,3 +15,9 @@
 	li $t9, 32                      # save space char to t9
 	lb $t5, 0($a0)                  # load first input char into t5
 	beq $t9, $t5, remove_first_char # remove the first char if it is a space
+	move $t5, $a0                   # if not a space save new input begining address into t5
+	j remove_trailing_spaces
+	
+	remove_first_char:
+	addi $a0, $a0, 1
+	j remove_space_before
