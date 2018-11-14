@@ -208,3 +208,8 @@
         li $v0, 1
         move $a0, $t9
         syscall
+	
+	#the end of main
+	exit:
+	li $v0, 10    #exit or end of program (terminate execution)
+	syscall       #closes the file
