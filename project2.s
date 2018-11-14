@@ -115,3 +115,10 @@
         slti $t4, $t3, 121              # if char is less than 121 [y] (valid input)
         bne $t4, $zero, Increment
         bgt $t3, 120, invalid_Base      # if char is greater than 120 [x] (invalid input)
+	li $t9, 10                      # Checks if it is a newline character
+        beq $t3, $t9, Initialization     
+           
+        Increment:
+	addi $a0, $a0, 1
+	j checkStringLoop
+	
