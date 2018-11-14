@@ -21,3 +21,10 @@
 	remove_first_char:
 	addi $a0, $a0, 1
 	j remove_space_before
+	
+	# Remove trailing spaces
+	remove_trailing_spaces:
+	la $t8, user_input
+	sub $t8, $t5, $t8   # Save the offset of the new starting position and beginning of input buffer 
+	li $t7, 0           #initialize index of last non-space character 
+	li $t9, 0           #intialize current index
