@@ -188,3 +188,8 @@
 	addi $a0, $a0, 1    #increments the pointer
 	j String_Conversion
 	
+	to_the_one_power:
+	li $s3, 34         #34 to the power of one
+	mult $s2, $s3
+	mflo $s4
+	add $t9, $t9, $s4
