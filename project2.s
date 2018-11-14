@@ -152,3 +152,7 @@
         bne $t4, $zero, A_to_X
         slti $t4, $s2, 121                      #Check if char is less than 121 (a-x)
         bne $t4, $zero, a_to_x
+
+	zero_to_nine:
+	addi $s2, $s2, -48
+	j calculations
