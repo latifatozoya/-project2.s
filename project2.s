@@ -101,4 +101,8 @@
         move $a0, $t3
         move $a0, $t9
         li $t9, 10       # newline character
-	
+	beq $t3, $zero, Initialization   
+        slti $t4, $t3, 48               # if char is less than 48 [0] (invalid input)
+        bne $t4, $zero, invalid_Base
+        slti $t4, $t3, 58               # if char is less than 58 [9] (valid input)
+        bne $t4, $zero, Increment
