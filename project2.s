@@ -135,3 +135,9 @@
         li $t8, 10
         li $t9, 0           #Initialize decimal sum to zero
         add $s0, $s0, $t1
+	addi $s0, $s0, -1  #Set appropriate starting power
+        li $s7, 3
+        li $s6, 2
+        li $s5, 1
+        li $s1, 0
+	
