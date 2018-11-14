@@ -147,3 +147,8 @@
         beqz $s2, display_the_Sum		#End loop if null character is reached
 	beq $s2, $t8, display_the_Sum    	#End loop if end-of-line is detected
 	slti $t4, $s2, 58                       #Check if the char is less than 58 (0-9)
+	bne $t4, $zero, zero_to_nine
+        slti $t4, $s2, 89                       #Check if char is less than 89 (A-X)
+        bne $t4, $zero, A_to_X
+        slti $t4, $s2, 121                      #Check if char is less than 121 (a-x)
+        bne $t4, $zero, a_to_x
