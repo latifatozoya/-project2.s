@@ -28,3 +28,8 @@
 	sub $t8, $t5, $t8   # Save the offset of the new starting position and beginning of input buffer 
 	li $t7, 0           #initialize index of last non-space character 
 	li $t9, 0           #intialize current index
+
+	rts_loop:
+	add $t4, $t8, $t9
+	addi $t4, $t4, -100
+	beqz $t4, end_rts   # End if the end of the string buffer has been reached
