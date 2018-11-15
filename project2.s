@@ -60,6 +60,9 @@
         check_Length:
         li $t1, 0              #Initialize count at 0
         add $a0, $t5, $zero
+	lb $t8, 0($a0)
+        addi $t8, $t8, -10    #check if the first byte is end of line char
+        beq $t8, $zero, emptyError  #if it is branch to emptyError
          
 	length_loop:
 	lb $t8, 0($a0)                 #load the next char to t8
